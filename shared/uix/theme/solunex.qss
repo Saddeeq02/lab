@@ -1,0 +1,172 @@
+/* ENTERPRISE LABORATORY DESIGN SYSTEM - COMPACT EDITION
+    Last Updated: 2026-04-02
+    Focus: Data Density, High Contrast, No-Stretch Components
+*/
+
+QMainWindow {
+    background-color: #F1F5F9; /* Slightly darker slate for better contrast with white cards */
+}
+
+QWidget {
+    font-family: "Inter", "Segoe UI", "Tahoma", sans-serif;
+    font-size: 12px;
+    color: #1E293B;
+}
+
+/* ===== SCROLLBARS (Slim & Non-Intrusive) ===== */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 6px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #CBD5E1;
+    min-height: 20px;
+    border-radius: 3px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #94A3B8;
+}
+
+/* ===== COMPACT TABLES ===== */
+QHeaderView::section {
+    background-color: #FFFFFF;
+    padding: 6px 10px; /* Reduced padding for density */
+    border: none;
+    border-bottom: 1px solid #E2E8F0;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Hide sort arrows to maintain LIFO alignment */
+QHeaderView::up-arrow, QHeaderView::down-arrow {
+    width: 0px; height: 0px;
+}
+
+QTableWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    gridline-color: #F1F5F9;
+    outline: none;
+}
+
+QTableWidget::item {
+    padding: 4px 8px; /* Tight vertical spacing */
+    border-bottom: 1px solid #F1F5F9;
+}
+
+QTableWidget::item:selected {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-left: 3px solid #2563EB;
+}
+
+/* ===== COMPACT INPUTS & COMBOBOXES ===== */
+QLineEdit, QComboBox, QDateEdit, QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 5px 10px; /* Tightened from 10px 12px */
+    color: #0F172A;
+    min-height: 24px;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1.5px solid #2563EB;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+/* ===== TAB WIDGET (Fixed for Patient Profile View) ===== */
+QTabWidget::pane {
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    border-radius: 8px;
+    top: -1px; /* Overlap with tab bar */
+}
+
+QTabBar::tab {
+    background: #F8FAFC;
+    padding: 6px 15px;
+    margin-right: 2px;
+    border: 1px solid #E2E8F0;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #64748B;
+    font-weight: 600;
+}
+
+QTabBar::tab:selected {
+    background: #FFFFFF;
+    color: #2563EB;
+    font-weight: 800;
+    border-top: 2px solid #2563EB;
+}
+
+/* ===== BUTTONS (High-Density / No Stretch) ===== */
+QPushButton {
+    background-color: #2563EB;
+    border: 1px solid #1D4ED8;
+    border-radius: 6px;
+    padding: 6px 14px; /* Balanced for density */
+    color: #FFFFFF;
+    font-weight: 700;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #3B82F6;
+}
+
+QPushButton:pressed {
+    background-color: #1E40AF;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+/* Specialized Badge/Pill Button */
+QPushButton#NotificationBadge {
+    background-color: #F1F5F9;
+    color: #475569;
+    border-radius: 12px;
+    font-size: 10px;
+    padding: 2px 6px;
+}
+
+/* Sidebar Specific (The left buttons) */
+#Sidebar QPushButton {
+    text-align: left;
+    padding: 10px 15px;
+    background-color: #2563EB;
+    border: none;
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+#Sidebar QPushButton:hover {
+    background-color: #1E40AF;
+}
+
+/* ===== CARDS & CONTAINERS ===== */
+QFrame#ContentHost, QFrame[card="true"] {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+/* Specific styling for your grid labels */
+QLabel#MetaInfo {
+    font-weight: 800;
+    color: #64748B;
+    font-size: 11px;
+}
