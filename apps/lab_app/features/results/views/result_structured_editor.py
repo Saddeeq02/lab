@@ -82,7 +82,7 @@ class StructuredResultEditorView(QWidget):
         self.btn_save_template.clicked.connect(self._save_as_template)
         controls.addWidget(self.btn_save_template)
 
-        self.btn_save = QPushButton("Save Result")
+        self.btn_save = QPushButton("Submit for Release")
         self.btn_save.setCursor(Qt.CursorShape.PointingHandCursor)
         self.btn_save.clicked.connect(self._save)
         controls.addWidget(self.btn_save)
@@ -439,7 +439,7 @@ class StructuredResultEditorView(QWidget):
             "rows": rows,
 
             # Optional metadata
-            "status": "draft",
+            "status": "pending_release",
             "notes": "",  # your UI can add notes later
         }
 
@@ -447,7 +447,7 @@ class StructuredResultEditorView(QWidget):
         print(f"UIX_SAVE snapshot_fields={len(template_snapshot.get('fields', []))} values_keys={list(values.keys())}")
 
         self.saved.emit(payload)
-        QMessageBox.information(self, "Saved", "Structured result saved (draft).")
+        QMessageBox.information(self, "Submitted", "Result submitted to the Hub. Waiting for Cashier to release.")
 
     def _slug_key(self, name: str) -> str:
         # Deterministic key generator for backend values dict

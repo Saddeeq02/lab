@@ -14,7 +14,7 @@ class ApiError(Exception):
         self.payload = payload
 
 
-@dataclass(frozen=True)
+@dataclass
 class ApiConfig:
     base_url: str
     timeout_s: float = 6.0
@@ -23,6 +23,9 @@ class ApiConfig:
 class ApiClient:
     def __init__(self, config: ApiConfig):
         self.config = config
+
+    def set_base_url(self, new_url: str):
+        self.config.base_url = new_url
 
     def _url(self, path: str) -> str:
         base = self.config.base_url.rstrip("/")

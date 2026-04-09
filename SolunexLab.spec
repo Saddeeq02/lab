@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['C:\\Users\\RAFAWA ENTERPRISES\\Desktop\\solunex_lab_app\\apps\\lab_app\\main.py'],
+    ['apps/lab_app/main.py'],
     pathex=[],
     binaries=[],
-    datas=[('C:\\Users\\RAFAWA ENTERPRISES\\Desktop\\solunex_lab_app\\shared', 'shared')],
+    datas=[('shared', 'shared')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['C:\\Users\\RAFAWA ENTERPRISES\\Desktop\\solunex_lab_app\\iande.ico'],
+    icon=['iande.ico'],
 )
